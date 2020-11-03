@@ -1,0 +1,23 @@
+---
+all:
+  hosts:
+  vars:
+    ansible_user: root
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  children:
+    manager:
+      hosts:
+        sm1:
+            ansible_host: 88.99.187.15
+        sm2:
+            ansible_host: 94.130.228.114
+        sm3:
+            ansible_host: 168.119.172.55
+
+    worker:
+      hosts:
+        sw1:
+            ansible_host: 88.99.226.61
+        sw2:
+            ansible_host: 159.69.7.223
+
